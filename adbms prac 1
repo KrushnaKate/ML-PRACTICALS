@@ -11,11 +11,11 @@ db.students.insertMany([{Name:'lol',age:69,subject:"computer graphics",status:"f
 //update
 db,students.updateOne({Name:"xyz",$set:{Name:"abc"}})
 
-//remove
+//delete
 db.students.deleteOne({Name:"xyz"})
 db.students.deleteMany({age:{$gt:21}})
 
-//query operations
+//read
 db.students.find()
 db.students.find({Name:"krushna"})
 
