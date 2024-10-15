@@ -1,0 +1,41 @@
+//this code is not tested
+
+use myDatabase
+
+db.createCollection('students')
+
+//insert
+db.students.insertOne({Name:'krushna',age:69,subject:"computer graphics",status:"graduated"})
+db.students.insertMany([{Name:'lol',age:69,subject:"computer graphics",status:"failed"},{Name:'xyz',age:1,subject:"computer graphics",status:"failed"}])
+
+//update
+db,students.updateOne({Name:"xyz",$set:{Name:"abc"}})
+
+//remove
+db.students.deleteOne({Name:"xyz"})
+db.students.deleteMany({age:{$gt:21}})
+
+//query operations
+db.students.find()
+db.students.find({Name:"krushna"})
+
+//and operation
+db.students.find({age:{$gt:19},{status:"failed"})
+
+//or operation
+db.students.find({$or:[{age:69},{status:"failed"}]})
+
+//where
+db.students.find({$where: "this.age>1"})
+
+//cursor
+//sort
+db.students.find().sort({age:-1}).limit(2)
+
+//skip
+db.students.find().skip(1).limit(2)
+
+
+
+
+
